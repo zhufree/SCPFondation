@@ -10,18 +10,8 @@
 		2C6457C9FE78A7D15B22C55B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		337F042D29C9569300F65DD8 /* EntryCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F042C29C9569300F65DD8 /* EntryCategoryView.swift */; };
 		337F042F29C95BF500F65DD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F042E29C95BF500F65DD8 /* Constants.swift */; };
-		337F044229C981AF00F65DD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F043429C981AF00F65DD8 /* Constants.swift */; };
-		337F044429C981AF00F65DD8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F043529C981AF00F65DD8 /* DetailView.swift */; };
-		337F044629C981AF00F65DD8 /* EntryCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F043629C981AF00F65DD8 /* EntryCategoryView.swift */; };
-		337F044829C981AF00F65DD8 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F043729C981AF00F65DD8 /* DocumentPicker.swift */; };
-		337F044A29C981AF00F65DD8 /* DatabaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F043829C981AF00F65DD8 /* DatabaseReader.swift */; };
-		337F044C29C981AF00F65DD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 337F043929C981AF00F65DD8 /* Assets.xcassets */; };
-		337F044E29C981AF00F65DD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 337F043B29C981AF00F65DD8 /* Preview Assets.xcassets */; };
-		337F045029C981AF00F65DD8 /* SCPFondationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F043C29C981AF00F65DD8 /* SCPFondationApp.swift */; };
-		337F045229C981AF00F65DD8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F043D29C981AF00F65DD8 /* SettingView.swift */; };
-		337F045429C981AF00F65DD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F043E29C981AF00F65DD8 /* ContentView.swift */; };
-		337F045629C981AF00F65DD8 /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F044029C981AF00F65DD8 /* DatabaseView.swift */; };
-		337F045829C981AF00F65DD8 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F044129C981AF00F65DD8 /* HomePageView.swift */; };
+		337F045B29C983AE00F65DD8 /* SCPListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F045A29C983AE00F65DD8 /* SCPListView.swift */; };
+		337F045D29C98A7300F65DD8 /* scp_category_ios.db in Resources */ = {isa = PBXBuildFile; fileRef = 337F045C29C98A7300F65DD8 /* scp_category_ios.db */; };
 		338A5DC029C8826A007775E0 /* DatabaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A5DBF29C8826A007775E0 /* DatabaseReader.swift */; };
 		339D77AE29C81E4A0050D488 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D77AD29C81E4A0050D488 /* DocumentPicker.swift */; };
 		33C42DF029C3FDDB001E73D3 /* SCPFondationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C42DEF29C3FDDB001E73D3 /* SCPFondationApp.swift */; };
@@ -175,19 +165,8 @@
 /* Begin PBXFileReference section */
 		337F042C29C9569300F65DD8 /* EntryCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCategoryView.swift; sourceTree = "<group>"; };
 		337F042E29C95BF500F65DD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		337F043429C981AF00F65DD8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		337F043529C981AF00F65DD8 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		337F043629C981AF00F65DD8 /* EntryCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCategoryView.swift; sourceTree = "<group>"; };
-		337F043729C981AF00F65DD8 /* DocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
-		337F043829C981AF00F65DD8 /* DatabaseReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseReader.swift; sourceTree = "<group>"; };
-		337F043929C981AF00F65DD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		337F043B29C981AF00F65DD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		337F043C29C981AF00F65DD8 /* SCPFondationApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCPFondationApp.swift; sourceTree = "<group>"; };
-		337F043D29C981AF00F65DD8 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		337F043E29C981AF00F65DD8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		337F043F29C981AF00F65DD8 /* SCPFondation.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SCPFondation.entitlements; sourceTree = "<group>"; };
-		337F044029C981AF00F65DD8 /* DatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
-		337F044129C981AF00F65DD8 /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		337F045A29C983AE00F65DD8 /* SCPListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPListView.swift; sourceTree = "<group>"; };
+		337F045C29C98A7300F65DD8 /* scp_category_ios.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = scp_category_ios.db; path = SCPFondation/scp_category_ios.db; sourceTree = SOURCE_ROOT; };
 		338A5DBF29C8826A007775E0 /* DatabaseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReader.swift; sourceTree = "<group>"; };
 		339D77AD29C81E4A0050D488 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		33C42DEC29C3FDDB001E73D3 /* SCPFondation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCPFondation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,34 +217,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		337F043329C981AF00F65DD8 /* SCPFondation */ = {
-			isa = PBXGroup;
-			children = (
-				337F043429C981AF00F65DD8 /* Constants.swift */,
-				337F043529C981AF00F65DD8 /* DetailView.swift */,
-				337F043629C981AF00F65DD8 /* EntryCategoryView.swift */,
-				337F043729C981AF00F65DD8 /* DocumentPicker.swift */,
-				337F043829C981AF00F65DD8 /* DatabaseReader.swift */,
-				337F043929C981AF00F65DD8 /* Assets.xcassets */,
-				337F043A29C981AF00F65DD8 /* Preview Content */,
-				337F043C29C981AF00F65DD8 /* SCPFondationApp.swift */,
-				337F043D29C981AF00F65DD8 /* SettingView.swift */,
-				337F043E29C981AF00F65DD8 /* ContentView.swift */,
-				337F043F29C981AF00F65DD8 /* SCPFondation.entitlements */,
-				337F044029C981AF00F65DD8 /* DatabaseView.swift */,
-				337F044129C981AF00F65DD8 /* HomePageView.swift */,
-			);
-			name = SCPFondation;
-			sourceTree = "<group>";
-		};
-		337F043A29C981AF00F65DD8 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				337F043B29C981AF00F65DD8 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		33C42DE329C3FDDB001E73D3 = {
 			isa = PBXGroup;
 			children = (
@@ -303,8 +254,9 @@
 				339D77AD29C81E4A0050D488 /* DocumentPicker.swift */,
 				338A5DBF29C8826A007775E0 /* DatabaseReader.swift */,
 				337F042C29C9569300F65DD8 /* EntryCategoryView.swift */,
-				337F043329C981AF00F65DD8 /* SCPFondation */,
+				337F045C29C98A7300F65DD8 /* scp_category_ios.db */,
 				337F042E29C95BF500F65DD8 /* Constants.swift */,
+				337F045A29C983AE00F65DD8 /* SCPListView.swift */,
 			);
 			path = SCPFondation;
 			sourceTree = "<group>";
@@ -580,10 +532,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337F045D29C98A7300F65DD8 /* scp_category_ios.db in Resources */,
 				33C42DF829C3FDDC001E73D3 /* Preview Assets.xcassets in Resources */,
 				33C42E2329C447B2001E73D3 /* Localizable.strings in Resources */,
-				337F044E29C981AF00F65DD8 /* Preview Assets.xcassets in Resources */,
-				337F044C29C981AF00F65DD8 /* Assets.xcassets in Resources */,
 				33C42DF429C3FDDC001E73D3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,25 +561,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C42DF229C3FDDB001E73D3 /* ContentView.swift in Sources */,
-				337F044429C981AF00F65DD8 /* DetailView.swift in Sources */,
-				337F044229C981AF00F65DD8 /* Constants.swift in Sources */,
 				33C42E2529C44E0F001E73D3 /* DatabaseView.swift in Sources */,
-				337F044A29C981AF00F65DD8 /* DatabaseReader.swift in Sources */,
 				33C42E2129C4422F001E73D3 /* SettingView.swift in Sources */,
 				33C42E1F29C4421B001E73D3 /* DetailView.swift in Sources */,
-				337F044629C981AF00F65DD8 /* EntryCategoryView.swift in Sources */,
 				33C42E1D29C441E5001E73D3 /* HomePageView.swift in Sources */,
-				337F045229C981AF00F65DD8 /* SettingView.swift in Sources */,
-				337F045029C981AF00F65DD8 /* SCPFondationApp.swift in Sources */,
 				337F042F29C95BF500F65DD8 /* Constants.swift in Sources */,
 				339D77AE29C81E4A0050D488 /* DocumentPicker.swift in Sources */,
 				33C42DF029C3FDDB001E73D3 /* SCPFondationApp.swift in Sources */,
-				337F045829C981AF00F65DD8 /* HomePageView.swift in Sources */,
-				337F045429C981AF00F65DD8 /* ContentView.swift in Sources */,
 				338A5DC029C8826A007775E0 /* DatabaseReader.swift in Sources */,
-				337F044829C981AF00F65DD8 /* DocumentPicker.swift in Sources */,
 				337F042D29C9569300F65DD8 /* EntryCategoryView.swift in Sources */,
-				337F045629C981AF00F65DD8 /* DatabaseView.swift in Sources */,
+				337F045B29C983AE00F65DD8 /* SCPListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,8 +747,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eth.zhufree.SCPFondation;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = eth.zhufree.SCPFondation.ios;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = eth.zhufree.SCPFondation.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -847,8 +787,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eth.zhufree.SCPFondation;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = eth.zhufree.SCPFondation.ios;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = eth.zhufree.SCPFondation.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

@@ -79,9 +79,6 @@ struct EntryCategoryView: View {
         }
     }
     
-    func getScpList(category: String, groupIndex: Int) -> [Scp] {
-        DatabaseReader.readDataFromDatabase(_scpType: 1) ?? []
-    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -109,9 +106,7 @@ struct EntryCategoryView: View {
                 // Show another scrollable list on the right depending on the selected option
                 NavigationView {
                     List(getRightList(index: selectedOption), id: \.self) { value in
-                        Button(action: {
-                            
-                        }) {
+                        NavigationLink(destination: SCPListView(dataType: 1, index: 1)) {
                             Text(value)
                         }
                     }
