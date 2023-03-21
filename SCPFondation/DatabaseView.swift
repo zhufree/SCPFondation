@@ -6,22 +6,46 @@
 //
 
 import SwiftUI
+//from SQLite import Connection
+#if canImport(MobileCoreServices)
+import MobileCoreServices
+#endif
+import UniformTypeIdentifiers
 
 struct DatabaseView: View {
     @State var isShowingPopup = false
+    @State private var showingDocumentPicker = false
+    @State var filename = "Filename"
+    @State var showFileChooser = false
+//    @State private var sqliteDB: Connection?
     var body: some View {
         // 居中对齐并从上到下排列的文字和按钮
         VStack {
             Spacer()
             Text("离线文档").font(.title).padding()
             Text("离线文档后，无需联网即可加载文档内容，且支持全文搜索功能。\n\n要离线文档，首先点击左侧按钮前往面包多下载数据库文件。下载完成后，点击右侧按钮，找到并选择刚刚下载的“scp_detail_v2.db”以将数据库文件加载至APP内。\n\n注：数据库文件不包括最近更新页面、最高评分页面。数据库文件总大小约300MB，请在确实需要的情况下自由下载。").padding()
+            #if os(macOS)
             HStack {
                 Text("1.")
-                #if os(macOS)
                 Button("前往下载数据库") {
                     isShowingPopup = true
                 }
-                #elseif os(iOS)
+                Text("2.")
+                Button("选择数据库文件") {
+                    showFileChooser = true
+//                    let panel = NSOpenPanel()
+//                    panel.allowsMultipleSelection = false
+//                    panel.canChooseDirectories = false
+//                    if panel.runModal() == .OK {
+//                        self.filename = panel.url?.lastPathComponent ?? "<none>"
+//                    }
+                }
+                .fileImporter(isPresented: $showFileChooser, allowedContentTypes: [.database]) {(res) in
+                                print("!!!\(res)")
+                            }
+            }.padding()
+            #elseif os(iOS)
+            VStack{
                 Button(action: {
                     isShowingPopup = true
                 }, label: {
@@ -33,15 +57,8 @@ struct DatabaseView: View {
                         .cornerRadius(40)
                         .frame(maxWidth: .infinity)
                 })
-                #endif
-                Text("2.")
-                #if os(macOS)
-                Button("选择数据库文件") {
-                    
-                }
-                #elseif os(iOS)
                 Button(action: {
-                    
+                    showFileChooser = true
                 }, label: {
                     Text("选择数据库文件")
                         .fontWeight(.bold)
@@ -51,14 +68,22 @@ struct DatabaseView: View {
                         .cornerRadius(40)
                         .frame(maxWidth: .infinity)
                 })
-                #endif
+                .fileImporter(isPresented: $showFileChooser, allowedContentTypes: [.database]) {(res) in
+                                print("!!!\(res)")
+                            }
             }.padding()
+            #endif
 //            Text("备份个性化数据")
             Spacer()
         }
         .sheet(isPresented: $isShowingPopup) {
             PopupView(isShowingPopup: $isShowingPopup)
         }
+//#if os(iOS)
+//        .sheet(isPresented: $showingDocumentPicker) {
+//            DocumentPicker(sqliteDB: $sqliteDB)
+//        }
+//        #endif
 
         .padding()
         #if os(iOS)
@@ -149,6 +174,7 @@ func openUrl(urlString: String) {
         #endif
     }
 }
+
 struct DatabaseView_Previews: PreviewProvider {
     static var previews: some View {
         DatabaseView()
