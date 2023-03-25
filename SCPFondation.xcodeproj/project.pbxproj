@@ -26,6 +26,8 @@
 		33C42E2129C4422F001E73D3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C42E2029C4422F001E73D3 /* SettingView.swift */; };
 		33C42E2329C447B2001E73D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33C42E2229C447B2001E73D3 /* Localizable.strings */; };
 		33C42E2529C44E0F001E73D3 /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C42E2429C44E0F001E73D3 /* DatabaseView.swift */; };
+		33DFA15D29CEB7C2001F5D99 /* SubCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DFA15C29CEB7C2001F5D99 /* SubCategoryView.swift */; };
+		33DFA16D29CEB7D4001F5D99 /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DFA16C29CEB7D4001F5D99 /* GroupListView.swift */; };
 		33F377EB29C8878D00295CFF /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F377DD29C8876700295CFF /* SQLite.framework */; platformFilter = ios; };
 		33F377EC29C8878D00295CFF /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33F377DD29C8876700295CFF /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33F377ED29C8878D00295CFF /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F377E129C8876700295CFF /* SQLite.framework */; platformFilters = (macos, ); };
@@ -185,6 +187,8 @@
 		33C42E2029C4422F001E73D3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		33C42E2229C447B2001E73D3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		33C42E2429C44E0F001E73D3 /* DatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
+		33DFA15C29CEB7C2001F5D99 /* SubCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryView.swift; sourceTree = "<group>"; };
+		33DFA16C29CEB7D4001F5D99 /* GroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListView.swift; sourceTree = "<group>"; };
 		33F377BA29C8874E00295CFF /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-0.14.1/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		33F377D229C8876700295CFF /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-0.14.1/SQLite.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +261,8 @@
 				337F045C29C98A7300F65DD8 /* scp_category_ios.db */,
 				337F042E29C95BF500F65DD8 /* Constants.swift */,
 				337F045A29C983AE00F65DD8 /* SCPListView.swift */,
+				33DFA15C29CEB7C2001F5D99 /* SubCategoryView.swift */,
+				33DFA16C29CEB7D4001F5D99 /* GroupListView.swift */,
 			);
 			path = SCPFondation;
 			sourceTree = "<group>";
@@ -570,7 +576,9 @@
 				33C42DF029C3FDDB001E73D3 /* SCPFondationApp.swift in Sources */,
 				338A5DC029C8826A007775E0 /* DatabaseReader.swift in Sources */,
 				337F042D29C9569300F65DD8 /* EntryCategoryView.swift in Sources */,
+				33DFA16D29CEB7D4001F5D99 /* GroupListView.swift in Sources */,
 				337F045B29C983AE00F65DD8 /* SCPListView.swift in Sources */,
+				33DFA15D29CEB7C2001F5D99 /* SubCategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

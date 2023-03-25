@@ -11,7 +11,6 @@ struct SCPListView: View {
     @State var dataType: Int = 0
     @State var index: Int = 0
     var body: some View {
-        Text("scp.title")
         let scpList = getScpList(category: dataType, groupIndex: 1)
         List(scpList, id: \.index) { scp in
             Text(scp.title)
