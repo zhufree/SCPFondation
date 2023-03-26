@@ -14,9 +14,9 @@ struct SettingView: View {
                 NavigationLink(destination: DatabaseView()) {
                     Text("本地数据")
                 }
-                NavigationLink(destination: DetailView()) {
-                    Text("App使用说明")
-                }
+//                NavigationLink(destination: DetailView()) {
+//                    Text("App使用说明")
+//                }
 //                NavigationLink(destination: DetailView()) {
 //                    Text("浏览历史")
 //                }

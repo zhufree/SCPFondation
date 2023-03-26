@@ -70,9 +70,9 @@ struct EntryCategoryView: View {
         let CategoryTypes = SCPConstants.Category()
         switch entryType {
             case EntryTypes.SCP_DOC:
-            return AnyView(GroupListView(type: CategoryTypes.SERIES, categoryName: "SCP系列", title: getSubCategory()[index], groupIndex: index))
+            return AnyView(GroupListView(categoryType: CategoryTypes.SERIES, categoryName: "SCP系列", title: getSubCategory()[index], groupIndex: index))
             case EntryTypes.SCP_CN_DOC:
-                return AnyView(GroupListView(type: CategoryTypes.SERIES_CN, categoryName: "SCP-CN系列", title: getSubCategory()[index], groupIndex: index))
+                return AnyView(GroupListView(categoryType: CategoryTypes.SERIES_CN, categoryName: "SCP-CN系列", title: getSubCategory()[index], groupIndex: index))
             case EntryTypes.STORY_DOC:
                 return AnyView(SCPListView())
             case EntryTypes.WANDER_DOC:
