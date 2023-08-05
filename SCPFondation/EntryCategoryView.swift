@@ -48,7 +48,7 @@ struct EntryCategoryView: View {
         }
     }
     
-    // Define the content for each option
+    // 第一层，根据entryType返回第一层目录
     func getSubCategory() -> [String] {
         let EntryTypes = SCPConstants.Entry.init()
         switch entryType {
@@ -65,20 +65,35 @@ struct EntryCategoryView: View {
         }
     }
     
-    func getNextLevel(index: Int) -> some View {
+    // 第二层目标View入口（GroupListView）
+    func getNextLevelView(index: Int) -> some View {
         let EntryTypes = SCPConstants.Entry.init()
         let CategoryTypes = SCPConstants.Category()
+        let DBTypes = SCPConstants.ScpType()
         switch entryType {
             case EntryTypes.SCP_DOC:
-            return AnyView(GroupListView(categoryType: CategoryTypes.SERIES, categoryName: "SCP系列", title: getSubCategory()[index], groupIndex: index))
+            // !!! 需更新
+            if (index < 7) {
+                return AnyView(GroupListView(categoryType: CategoryTypes.SERIES, categoryName: "SCP系列", title: getSubCategory()[index], groupIndex: index))
+            } else if (index == 7) { // 搞笑SCP
+                return AnyView(SCPListView(dataType: DBTypes.SAVE_JOKE, groupIndex: -1, categoryName: getSubCategory()[index]))
+            } else {
+                return AnyView(SCPListView(dataType: DBTypes.SAVE_EX, groupIndex: -1, categoryName: getSubCategory()[index]))
+            }
             case EntryTypes.SCP_CN_DOC:
+            if (index < 3) {
                 return AnyView(GroupListView(categoryType: CategoryTypes.SERIES_CN, categoryName: "SCP-CN系列", title: getSubCategory()[index], groupIndex: index))
+            } else if (index == 3) {
+                return AnyView(SCPListView(dataType: DBTypes.SAVE_JOKE_CN, groupIndex: -1, categoryName: getSubCategory()[index]))
+            } else {
+                return AnyView(SCPListView(dataType: DBTypes.SAVE_EX_CN, groupIndex: -1, categoryName: getSubCategory()[index]))
+            }
             case EntryTypes.STORY_DOC:
-                return AnyView(SCPListView())
+                return AnyView(SCPListView(categoryName: getSubCategory()[index]))
             case EntryTypes.WANDER_DOC:
-                return AnyView(SCPListView())
+                return AnyView(SCPListView(categoryName: getSubCategory()[index]))
             default:
-                return AnyView(SCPListView())
+                return AnyView(SCPListView(categoryName: getSubCategory()[index]))
         }
     }
 
@@ -88,19 +103,11 @@ struct EntryCategoryView: View {
 //        NavigationView {
             // Display the list of options on the left
             List(Array(getSubCategory().enumerated()), id: \.element) { index, value in
-                NavigationLink(destination: getNextLevel(index: index)) {
+                NavigationLink(destination: getNextLevelView(index: index)) {
                     Text(value)
                 }
             }
-        #if os(macOS)
-                .toolbar {
-                    ToolbarItem(placement: .navigation) {
-                        Text(categoryName)
-                    }
-                }
-        #elseif os(iOS)
-                .navigationBarTitle(Text(title))
-        #endif
+            .navigationBarTitle(Text(title))
 //        }
 //        .padding()
 

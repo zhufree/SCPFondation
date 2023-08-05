@@ -1,5 +1,6 @@
 //
-//  ContentView.swift
+//  MainView.swift
+// 主界面
 //  SCPFondation
 //
 //  Created by zhufree on 2023/3/17.
@@ -7,10 +8,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @State private var selection = 0
     var body: some View {
         TabView(selection: $selection){
+            // 首页
             HomePageView()
                 .tabItem {
                     VStack {
@@ -21,6 +23,7 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
+            // 设置页
             SettingView()
                 .tabItem {
                     VStack {
@@ -41,6 +44,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }

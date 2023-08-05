@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomePageView:View {
+    // HomePageView->EntryCategoryView->GroupListView/SCPListView->SCPListView->DetailView
     var body: some View {
         let entryTypes = SCPConstants.Entry.init()
         NavigationView {
@@ -24,16 +25,23 @@ struct HomePageView:View {
                 NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "放逐者图书馆")) {
                     Text("放逐者图书馆")
                 }
-            }
-            #if os(macOS)
-            .toolbar {
-                ToolbarItem(placement: .navigation) {
-                    Text("SCP基金会")
+                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "图书馆")) {
+                    Text("图书馆")
+                }
+                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "SCP国际版")) {
+                    Text("SCP国际版")
+                }
+                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "GOI格式")) {
+                    Text("GOI格式")
+                }
+                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "艺术作品")) {
+                    Text("艺术作品")
+                }
+                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "背景资料与指导")) {
+                    Text("背景资料与指导")
                 }
             }
-            #elseif os(iOS)
             .navigationBarTitle(Text("SCP基金会"))
-            #endif
         }
     }
 }
