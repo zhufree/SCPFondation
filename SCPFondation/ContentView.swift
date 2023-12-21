@@ -11,34 +11,34 @@ import SwiftUI
 struct MainView: View {
     @State private var selection = 0
     var body: some View {
-        TabView(selection: $selection){
-            // 首页
-            HomePageView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "book.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                        Text("Read")
+        NavigationView {
+            TabView(selection: $selection){
+                // 首页
+                HomePageView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "book.circle.fill")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                            Text("Read")
+                        }
                     }
-                }
-                .tag(0)
-            // 设置页
-            SettingView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "gear")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                        Text("Setting")
+                    .tag(0)
+                // 设置页
+                SettingView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "gear")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                            Text("Setting")
+                        }
                     }
-                }
-                .tag(1)
+                    .tag(1)
+            }
         }
     }
 }
-
-
 
 
 

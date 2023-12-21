@@ -9,39 +9,73 @@ import SwiftUI
 
 struct HomePageView:View {
     // HomePageView->EntryCategoryView->GroupListView/SCPListView->SCPListView->DetailView
+    @State private var selectedTab = 0
+    let DBTypes = SCPConstants.ScpType()
+    let entryTypes = SCPConstants.Entry.init()
+    let tabs = ["首页", "图书馆", "SCP国际版", "GIO格式", "艺术作品", "背景资料与指导"]
     var body: some View {
-        let entryTypes = SCPConstants.Entry.init()
-        NavigationView {
-            List {
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.SCP_DOC, title: "SCP系列")) {
-                    Text("SCP系列")
+        VStack {
+            // 可滚动的顶部标签
+            ScrollViewReader { scrollProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(tabs.indices, id: \.self) { index in
+                            Text(self.tabs[index])
+                                .padding()
+                                .background(selectedTab == index ? Color.blue : Color.clear)
+                                .foregroundColor(selectedTab == index ? .white : .black)
+                                .cornerRadius(10)
+                                .onTapGesture {
+                                    self.selectedTab = index
+                                    withAnimation {
+                                        scrollProxy.scrollTo(index, anchor: .center)
+                                    }
+                                }
+                                .id(index)
+                        }
+                    }
                 }
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.SCP_CN_DOC, title: "SCP-CN系列")) {
-                    Text("SCP-CN系列")
+                .onChange(of: selectedTab) { newIndex in
+                    withAnimation {
+                        scrollProxy.scrollTo(newIndex, anchor: .center)
+                    }
                 }
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.STORY_DOC, title: "故事与设定")) {
-                    Text("故事与设定")
+            
+            // 创建TabView与选择器同步
+                TabView(selection: $selectedTab) {
+                    IndexView()
+                        .tabItem {
+                            Label("首页", systemImage: "1.square.fill")
+                        }
+                        .tag(0)
+                    SCPListView(dataType: DBTypes.SAVE_LIBRARY_PAGE, groupIndex: -1, categoryName: "图书馆")
+                        .tabItem {
+                            Label("图书馆", systemImage: "2.square.fill")
+                        }
+                        .tag(1) // 确保标签匹配
+                    EntryCategoryView(entryType: entryTypes.INTERNATIONAL_DOC, title: "SCP国际版")
+                        .tag(2) // 确保标签匹配
+                        .tabItem {
+                            Label("SCP国际版", systemImage: "3.square.fill")
+                        }
+                    EntryCategoryView(entryType: entryTypes.GOI_DOC, title: "GOI格式")
+                        .tag(3) // 确保标签匹配
+                        .tabItem {
+                            Label("GOI格式", systemImage: "3.square.fill")
+                        }
+                    EntryCategoryView(entryType: entryTypes.ART_DOC, title: "艺术作品")
+                        .tag(4) // 确保标签匹配
+                        .tabItem {
+                            Label("艺术作品", systemImage: "3.square.fill")
+                        }
+                    SCPListView(dataType: DBTypes.SAVE_INFO_PAGE, groupIndex: -1, categoryName: "背景资料与指导")
+                        .tag(5) // 确保标签匹配
+                        .tabItem {
+                            Label("背景资料与指导", systemImage: "2.square.fill")
+                        }
                 }
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "放逐者图书馆")) {
-                    Text("放逐者图书馆")
-                }
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "图书馆")) {
-                    Text("图书馆")
-                }
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "SCP国际版")) {
-                    Text("SCP国际版")
-                }
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "GOI格式")) {
-                    Text("GOI格式")
-                }
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "艺术作品")) {
-                    Text("艺术作品")
-                }
-                NavigationLink(destination: EntryCategoryView(entryType: entryTypes.WANDER_DOC, title: "背景资料与指导")) {
-                    Text("背景资料与指导")
-                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
             }
-            .navigationBarTitle(Text("SCP基金会"))
         }
     }
 }

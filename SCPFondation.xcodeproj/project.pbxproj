@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C6457C9FE78A7D15B22C55B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		3342A6002B33F4E500D69B1F /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3342A5FF2B33F4E500D69B1F /* IndexView.swift */; };
 		337F042D29C9569300F65DD8 /* EntryCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F042C29C9569300F65DD8 /* EntryCategoryView.swift */; };
 		337F042F29C95BF500F65DD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F042E29C95BF500F65DD8 /* Constants.swift */; };
 		337F045B29C983AE00F65DD8 /* SCPListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F045A29C983AE00F65DD8 /* SCPListView.swift */; };
@@ -116,6 +117,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3342A5FF2B33F4E500D69B1F /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
 		337F042C29C9569300F65DD8 /* EntryCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCategoryView.swift; sourceTree = "<group>"; };
 		337F042E29C95BF500F65DD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		337F045A29C983AE00F65DD8 /* SCPListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPListView.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				337F045A29C983AE00F65DD8 /* SCPListView.swift */,
 				33DFA15C29CEB7C2001F5D99 /* SubCategoryView.swift */,
 				33DFA16C29CEB7D4001F5D99 /* GroupListView.swift */,
+				3342A5FF2B33F4E500D69B1F /* IndexView.swift */,
 			);
 			path = SCPFondation;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				33C42E1D29C441E5001E73D3 /* HomePageView.swift in Sources */,
 				337F042F29C95BF500F65DD8 /* Constants.swift in Sources */,
 				339D77AE29C81E4A0050D488 /* DocumentPicker.swift in Sources */,
+				3342A6002B33F4E500D69B1F /* IndexView.swift in Sources */,
 				33C42DF029C3FDDB001E73D3 /* SCPFondationApp.swift in Sources */,
 				338A5DC029C8826A007775E0 /* DatabaseReader.swift in Sources */,
 				337F042D29C9569300F65DD8 /* EntryCategoryView.swift in Sources */,

@@ -39,20 +39,20 @@ struct HTMLView: UIViewRepresentable {
     
     let htmlString: String
     let nightTextStyle = "<style>body{background-color:#222;}p {font-size:" +
-    "$currentTextSize;}* {color:#aaa;}</style>"
-    let dayTextStyle = "<style>p {font-size:$currentTextSize}" +
+    "24px;}* {color:#aaa;}</style>"
+    let dayTextStyle = "<style>p {font-size:48px}" +
     ";}* {color:#000;}</style>"
     let siteCssURL = Bundle.main.url(forResource: "style", withExtension: "css")!
+    let jqScriptURL = Bundle.main.url(forResource: "jquery-ui.min", withExtension: "js")!
+    let initScriptURL = Bundle.main.url(forResource: "init.combined", withExtension: "js")!
+    let tabScriptURL = Bundle.main.url(forResource: "tabview-min", withExtension: "js")!
+    let wikiScriptURL = Bundle.main.url(forResource: "WIKIDOT.combined", withExtension: "js")!
     
-
+    
     var minimumZoomScale: CGFloat = 1.0
     var maximumZoomScale: CGFloat = 1.0
     var zoomScale: CGFloat = 2.0
     
-    var jqScript = "<script type=\"text/javascript\" src=\"jquery-ui.min.js\"></script>\n"
-    var initScript = "<script type=\"text/javascript\" src=\"init.combined.js\"></script>"
-    var tabScript = "<script type=\"text/javascript\" src=\"tabview-min.js\"></script>"
-    var wikiScript = "<script type=\"text/javascript\" src=\"WIKIDOT.combined.js\"></script>"
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
@@ -65,21 +65,18 @@ struct HTMLView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        let jsScript = "\(jqScript)\(initScript)\(tabScript)\(wikiScript)"
-        let siteStyle = "<link rel=\"stylesheet\" type=\"text/css\" href=\"\(siteCssURL.absoluteString)\" />"
-        print(htmlString + jsScript + siteStyle)
-        uiView.loadHTMLString(htmlString + jsScript + siteStyle, baseURL: nil)
+        let siteStyle = "<link rel=\"stylesheet\" type=\"text/css\" href=\"\(siteCssURL.absoluteString)\" />" + dayTextStyle
+        uiView.loadHTMLString(siteStyle, baseURL: nil)
     }
     func makeCoordinator() -> DetailWebViewController {
         DetailWebViewController(self)
     }
     
     class DetailWebViewController: NSObject, WKNavigationDelegate {
-        var jqScript = "<script type=\"text/javascript\" src=\"jquery-ui.min.js\"></script>\n"
-        var initScript = "<script type=\"text/javascript\" src=\"init.combined.js\"></script>"
-        var tabScript = "<script type=\"text/javascript\" src=\"tabview-min.js\"></script>"
-        var wikiScript = "<script type=\"text/javascript\" src=\"WIKIDOT.combined.js\"></script>"
-        
+        let jqScriptURL = Bundle.main.url(forResource: "jquery-ui.min", withExtension: "js")!
+        let initScriptURL = Bundle.main.url(forResource: "init.combined", withExtension: "js")!
+        let tabScriptURL = Bundle.main.url(forResource: "tabview-min", withExtension: "js")!
+        let wikiScriptURL = Bundle.main.url(forResource: "WIKIDOT.combined", withExtension: "js")!
         var parent: HTMLView
                 
         init(_ parent: HTMLView) {
@@ -93,12 +90,19 @@ struct HTMLView: UIViewRepresentable {
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             print("Page loaded")
-            let jsScript = "\(jqScript)\(initScript)\(tabScript)\(wikiScript)"
-            webView.evaluateJavaScript(jsScript) { (result, error) in
-                if error == nil {
-                    print(result)
+            do {
+                let jsString = try String(contentsOf: wikiScriptURL, encoding: .utf8)
+                webView.evaluateJavaScript(jsString) { (result, error) in
+                    if let error = error {
+                        print("Error running JavaScript: \(error)")
+                    } else {
+                        print("JavaScript ran successfully")
+                    }
                 }
+            } catch {
+                print("Failed to read JavaScript file: \(error)")
             }
+            
         }
         
 //        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

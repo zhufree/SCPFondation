@@ -60,6 +60,14 @@ struct EntryCategoryView: View {
                 return ["基金会故事", "CN原创故事", "CN原创故事(按发布时间排列)", "设定中心", "CN设定中心", "故事系列", "CN故事系列", "征文竞赛", "CN征文竞赛"]
             case EntryTypes.WANDER_DOC:
                 return ["放逐者图书馆", "CN放逐者图书馆"]
+            case EntryTypes.INTERNATIONAL_DOC:
+                return ["俄国分部", "韩国分部", "法国分部", "波兰分部", "西班牙分部",
+                        "泰国分部", "日本分部", "德国分部", "意大利分部", "乌克兰分部",
+                        "葡萄牙语分部", "捷克分部", "非官方分部"]
+            case EntryTypes.GOI_DOC:
+                return ["1-100", "100-200", "200-300", "300-400", "400+"]
+            case EntryTypes.ART_DOC:
+                return ["1-100", "100-200", "200-300", "300+"]
             default:
                 return []
         }

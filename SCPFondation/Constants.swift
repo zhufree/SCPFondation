@@ -38,9 +38,9 @@ struct SCPConstants {
         let STORY_DOC = 1003 // 故事外围
         let GOI_DOC = 1004 // 故事外围
         let ART_DOC = 1005 // 故事外围
-        let WANDER_DOC = 1006 // 故事外围
-        let LIBRARY_DOC = 1007 // 故事外围
-        let INTERNATIONAL_DOC = 1008 // 故事外围
+        let WANDER_DOC = 1006 // 放逐者图书馆
+        let LIBRARY_DOC = 1007 // 图书馆
+        let INTERNATIONAL_DOC = 1008 // 国际版
         let INFORMATION_DOC = 1009 // 故事外围
 
     }
